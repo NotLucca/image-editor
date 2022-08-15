@@ -36,7 +36,7 @@ const Meme = () => {
             <div className="input-group">
               <input
                 type="text"
-                placeholder="Top text"
+                placeholder="Texto superior"
                 className="form--input"
                 name="topText"
                 value={meme.topText}
@@ -44,7 +44,7 @@ const Meme = () => {
               />
               <input
                 type="text"
-                placeholder="Bottom text"
+                placeholder="Texto inferior"
                 className="form--input"
                 name="bottomText"
                 value={meme.bottomText}
@@ -52,7 +52,7 @@ const Meme = () => {
               />
             </div>
             <button className="form--button" onClick={fetchMemesImages}>
-              Get a new image!
+              Gerar nova imagem!!
             </button>
           </div>
           <div className="meme-output">

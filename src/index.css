@@ -34,6 +34,7 @@ header {
 .header--container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 50px;
 }
 
@@ -138,3 +139,25 @@ main{
 }
 
 
+@media screen and (max-width: 768px) {
+  
+  .header--image{
+    width: 60px;
+    height: 80px;
+  }
+  .meme-container{
+    flex-direction: column-reverse
+  }
+  .form{
+    min-height: 0px;
+    margin: 20px auto;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1px;
+  }
+  .meme-output{
+    width: auto;
+    margin: 20px 0;
+  }
+}
