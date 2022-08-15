@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Draggable from "react-draggable";
+import * as htmlToImage from 'html-to-image';
+
 const Meme = () => {
   const [meme, setMeme] = useState({
     topText: "",
@@ -28,10 +30,21 @@ const Meme = () => {
     }));
   };
 
+
+  const downloadImage = async () => {
+    const dataUrl = await htmlToImage.toPng(document.getElementById("meme"));
+   
+    // download image
+    const link = document.createElement('a');
+    link.download = "html-to-img.png";
+    link.href = dataUrl;
+    link.click();
+  }
+
   return (
     <main>
       <div className="container">
-        <div className="meme-container">
+        <div className="meme-container" id="canvas">
           <div className="form">
             <div className="input-group">
               <input
@@ -54,9 +67,17 @@ const Meme = () => {
             <button className="form--button" onClick={fetchMemesImages}>
               Gerar nova imagem!!
             </button>
+            <button  className="form--button" onClick={downloadImage}>
+                Exportar como imagem
+            </button>
+
+
+
+
+
           </div>
           <div className="meme-output">
-            <div className="image-container">
+            <div className="image-container" id='meme'>
               <img src={meme.randomImage} alt="meme" className="meme-img" />
               <Draggable className="draggable" bounds=".image-container">
                 <h2 className="meme--text top">{meme.topText}</h2>
