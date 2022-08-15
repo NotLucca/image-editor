@@ -58,10 +58,10 @@ const Meme = () => {
           <div className="meme-output">
             <div className="image-container">
               <img src={meme.randomImage} alt="meme" className="meme-img" />
-              <Draggable className="draggable" bounds="body">
+              <Draggable className="draggable" bounds=".image-container">
                 <h2 className="meme--text top">{meme.topText}</h2>
               </Draggable>
-              <Draggable className="draggable" bounds="body">
+              <Draggable className="draggable" bounds=".image-container">
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
               </Draggable>
             </div>

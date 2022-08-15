@@ -24,22 +24,25 @@ header {
   background-color: blueviolet;
 }
 
-.container {
-  width: 100%;
+.container{
+  width: 80%;
   max-width: 1245px;
   margin: 0 auto;
-  padding: 0 5%;
+ 
 }
 
 .header--container {
   display: flex;
   justify-content: space-between;
+  gap: 50px;
 }
 
 .header--image {
   width: 80px
 }
-
+main{
+  display: flex;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -92,50 +95,59 @@ header {
   font-size: 16px;
 }
 
-.meme-container {
-  background-color: white;
-  padding: 5%;
-  margin: 40px 0;
-
+.meme-container{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   gap: 20px;
-
 }
-
-.meme-output {
+.meme-output{
   width: 60%;
 
+  background-color: white;
+  padding: 5%;
+  margin: 20px;
 }
-
-.image-container {
-  position: relative;
-
-  height: fit-content;
-  width: fit-content;
-}
-
-.meme-img {
+.image-container{
   width: 100%;
-  float: right;
+  position: relative;
+ 
+  
 }
-
-.meme--text {
+.meme-img{
+  width: 100%;
+}
+.meme--text{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
   text-shadow:
-    2px 2px 0 #000,
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    0 2px 0 #000,
-    2px 0 0 #000,
-    0 -2px 0 #000,
-    -2px 0 0 #000,
-    2px 2px 5px #000;
-  color: white;
+  2px 2px 0 #000,
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  0 2px 0 #000,
+  2px 0 0 #000,
+  0 -2px 0 #000,
+  -2px 0 0 #000,
+  2px 2px 5px #000;
+}
+
+/* limit draggable area */
+.draggable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
+
 }
