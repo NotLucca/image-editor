@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Draggable from "react-draggable";
 const Meme = () => {
   const [meme, setMeme] = useState({
     topText: "",
@@ -30,39 +30,44 @@ const Meme = () => {
 
   return (
     <main>
-        <div className="container">
-            <div className="meme-container">
-                <div className="form">
-                    <div className="input-group">
-                        <input
-                        type="text"
-                        placeholder="Top text"
-                        className="form--input"
-                        name="topText"
-                        value={meme.topText}
-                        onChange={handleChange}
-                        />
-                        <input
-                        type="text"
-                        placeholder="Bottom text"
-                        className="form--input"
-                        name="bottomText"
-                        value={meme.bottomText}
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <button className="form--button" onClick={fetchMemesImages}>
-                    Get a new image!
-                    </button>
-                </div>
-                <div className="meme-output">
-                    <img className="meme-img"  src={meme.randomImage} alt="meme"></img>
-                    <h2 className="meme--text top">{meme.topText}</h2>
-                    <h2 className="meme--text bottom">{meme.bottomText}</h2>
-                </div>
+      <div className="container">
+        <div className="meme-container">
+          <div className="form">
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="Top text"
+                className="form--input"
+                name="topText"
+                value={meme.topText}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                placeholder="Bottom text"
+                className="form--input"
+                name="bottomText"
+                value={meme.bottomText}
+                onChange={handleChange}
+              />
             </div>
-        
+            <button className="form--button" onClick={fetchMemesImages}>
+              Get a new image!
+            </button>
+          </div>
+          <div className="meme-output">
+            <div className="image-container">
+              <img src={meme.randomImage} alt="meme" className="meme-img" />
+              <Draggable className="draggable" bounds="body">
+                <h2 className="meme--text top">{meme.topText}</h2>
+              </Draggable>
+              <Draggable className="draggable" bounds="body">
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+              </Draggable>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
   );
 };
